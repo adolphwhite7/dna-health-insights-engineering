@@ -1,0 +1,22 @@
+{
+  "name": "dna-health-insights-engineering",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Selected engineering source from DNA Health Insights with deterministic, synthetic offline tests.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "2.103.0",
+    "@types/node": "20.19.39",
+    "jose": "5.10.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.3",
+    "zod": "4.4.3"
+  }
+}

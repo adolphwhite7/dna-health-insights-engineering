@@ -1,0 +1,5 @@
+# rsid	chromosome	position	genotype
+rs123'; DROP TABLE variants;--	1	12345	AA
+rs456 UNION SELECT * FROM users	1	12346	AG
+rs789); DELETE FROM reports WHERE ('1'='1	2	22345	CC
+rs101112/**/OR/**/1=1	3	32345	GG

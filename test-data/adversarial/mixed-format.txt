@@ -1,0 +1,7 @@
+# 23andMe
+# rsid	chromosome	position	genotype
+rs3094315	1	752566	A	A
+rs12562034	1	768448	A	G
+rs3934834	1	1005806	C	C
+rs9442372	1	1018704	G	G
+rs3737728	1	1021415	A	A

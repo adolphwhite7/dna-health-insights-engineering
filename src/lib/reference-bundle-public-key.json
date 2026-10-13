@@ -1,0 +1,8 @@
+{
+  "crv": "Ed25519",
+  "x": "jFxhvBaVt7UqQVNxA-yX6xr1Ub5evbffwuVnrQnW9O0",
+  "kty": "OKP",
+  "kid": "reference-bundle-prod-2026-07-15-v1",
+  "use": "sig",
+  "alg": "EdDSA"
+}
