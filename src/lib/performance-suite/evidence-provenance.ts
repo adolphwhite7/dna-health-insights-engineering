@@ -6,7 +6,7 @@
  * no usable evidence signal whatsoever (no significance, no level,
  * no source).
  *
- * Tier-1: no raw rsID/allele/genotype in any fixture — synthetic
+ * Tier-1: no raw rsID/allele/genotype in any fixture — example
  * significance/level strings only.
  */
 

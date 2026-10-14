@@ -22,7 +22,7 @@ This repository opens substantial TypeScript implementation from the codebase be
 ## A five-minute review
 
 1. Open the [source resolver](src/server/customer-chat/sources.ts) alongside its [regression tests](src/server/customer-chat/__tests__/sources.test.ts). Follow how an explicit report reference is scoped to its owner and how current evidence takes precedence over historical matches.
-2. Read the [narration construction boundary](src/lib/narration/structured-findings-contract.ts) and its [tests](src/lib/narration/__tests__/structured-findings-contract.test.ts). The test inputs distinguish allowed finding fields from raw browser state and exercise a large synthetic finding set.
+2. Read the [narration construction boundary](src/lib/narration/structured-findings-contract.ts) and its [tests](src/lib/narration/__tests__/structured-findings-contract.test.ts). The test inputs distinguish allowed finding fields from raw browser state and exercise a large example finding set.
 3. Follow a malformed input through the [parser tests](src/lib/__tests__/genome-parser-adversarial.test.ts). Confidence and parsing results are exposed explicitly instead of treating every input as a complete valid genome.
 4. Run the checks below. Then use the [architecture walkthrough](docs/ARCHITECTURE.md) to connect these components to the product.
 
@@ -38,7 +38,7 @@ npm test
 npm run typecheck
 ```
 
-Dependency installation requires network access. After installation, the selected tests use synthetic inputs and a mocked database interface; they require no accounts, credentials, database, model provider, or customer files. The test setup rejects unexpected `fetch` calls. Type checking covers the implementation; Vitest executes the test files.
+Dependency installation requires network access. After installation, the selected tests use example inputs and a mocked database interface; they require no accounts, credentials, database, model provider, or customer files. The test setup rejects unexpected `fetch` calls. Type checking covers the implementation; Vitest executes the test files.
 
 The tests exercise malformed input, typed data transfer, evidence projection, provenance, question routing, report ownership and identity resolution, and answer normalization. See the [source and test guide](docs/SOURCE_GUIDE.md) for the exact boundaries. These checks establish component behavior; they do not constitute clinical validation or a fresh end-to-end production test.
 
@@ -50,8 +50,8 @@ I am Adolph White Jr., Chief Architect of DNA Health Insights. My work covers sy
 
 The source snapshot is drawn from the product repository at commit `88d9ab2cc6c4a4de5bd1c3feab6af45accbc3837` (October 9, 2026). The selected implementation and tests retain their product behavior. The public export removes an unused competitor-comparison table, replaces a few obsolete or internal comments, and neutralizes fixture names and timestamps; the small package and test setup make the selection independently reviewable.
 
-Customer files, raw genome datasets, account/report exports, credentials, deployment configuration, and internal operating records are excluded. Included fixtures are deliberately synthetic. The reference verification key is a public key; no signing key is included.
+Customer files, raw genome datasets, account/report exports, credentials, deployment configuration, and internal operating records are excluded. Included fixtures are examples for testing. The reference verification key is a public key; no signing key is included.
 
 This is a source-inspection and test package. The hosted interface, production database, reference-data releases, model execution, payments, and deployment system remain part of the separately operated product. [Source boundaries](docs/SOURCE_GUIDE.md#what-is-included) explain which supporting modules are included for readability and type completeness and which behaviors the runnable checks cover.
 
-DNA Health Insights is an educational product. The source examples and synthetic tests are engineering material, not individualized medical advice.
+DNA Health Insights is an educational product. The source examples and tests are engineering material, not individualized medical advice.

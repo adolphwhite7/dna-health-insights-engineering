@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Selected engineering source from DNA Health Insights with deterministic, synthetic offline tests.",
+  "description": "Selected engineering source from DNA Health Insights with deterministic offline tests using example data.",
   "engines": {
     "node": ">=22.12.0"
   },

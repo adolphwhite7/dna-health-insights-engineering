@@ -19,7 +19,7 @@ function findingsWithDiseaseRows(count: number): StructuredFindings {
         gene: `GENE${index}`,
         genotype: index % 2 === 0 ? "AG" : "A",
         clinical_significance: "informational",
-        traits: "Synthetic provider contract fixture",
+        traits: "Example provider contract fixture",
         inheritance: "not specified",
         zygosity: "not specified",
       })),
@@ -30,10 +30,10 @@ function findingsWithDiseaseRows(count: number): StructuredFindings {
       protective: [],
     },
     summary: {
-      subject_name: "Synthetic UAT",
+      subject_name: "Example subject",
       total_variants_analyzed: 100_000,
       analysis_date: "2026-07-13",
-      source: "synthetic_23andme_v5",
+      source: "example_23andme_v5",
       enrichment_mode: "client",
       lifestyle_count: 0,
       pharmacogenomic_count: 0,
@@ -56,7 +56,7 @@ function findingsWithDiseaseRows(count: number): StructuredFindings {
 }
 
 describe("Structured Findings narration construction boundary", () => {
-  it("transports all 821 eligible synthetic findings, including provider-native IDs", () => {
+  it("transports all 821 eligible example findings, including provider-native IDs", () => {
     const request = buildNarrationRequestPayload({
       clientReportUuid: "123e4567-e89b-42d3-a456-426614174000",
       structuredFindings: findingsWithDiseaseRows(821),
@@ -75,12 +75,12 @@ describe("Structured Findings narration construction boundary", () => {
 
   it("projects only typed DTO fields and cannot serialize browser raw-state containers", () => {
     const rawState = Object.assign(findingsWithDiseaseRows(1), {
-      raw_file: new File(["synthetic raw text"], "synthetic.txt"),
-      raw_text: "synthetic raw text",
-      variant_map: new Map([["synthetic-marker", "AG"]]),
+      raw_file: new File(["example raw text"], "example.txt"),
+      raw_text: "example raw text",
+      variant_map: new Map([["example-marker", "AG"]]),
     });
     Object.assign(rawState.disease_findings.pathogenic[0], {
-      raw_row: "synthetic-marker 1 100 AG",
+      raw_row: "example-marker 1 100 AG",
     });
 
     const request = buildNarrationRequestPayload({

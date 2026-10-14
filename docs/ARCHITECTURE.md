@@ -22,13 +22,13 @@ flowchart TD
 
 [genome-parser.ts](../src/lib/genome-parser.ts) handles several consumer export formats and exposes detection confidence with the result. Header evidence, delimiters, and column shapes are separate inputs to that decision. A count of parsed records is not represented as proof that an export is complete.
 
-The [adversarial test suite](../src/lib/__tests__/genome-parser-adversarial.test.ts) includes empty input, binary junk, wrong delimiters, missing headers, truncated exports, mixed shapes, long identifiers, and SQL-like text treated as data. Its fixtures are intentionally small synthetic examples.
+The [adversarial test suite](../src/lib/__tests__/genome-parser-adversarial.test.ts) includes empty input, binary junk, wrong delimiters, missing headers, truncated exports, mixed shapes, long identifiers, and SQL-like text treated as data. Its fixtures are intentionally small examples.
 
 ## 2. Define the transfer contract explicitly
 
 [structured-findings-contract.ts](../src/lib/narration/structured-findings-contract.ts) constructs a narration payload through typed field selection and schema validation. Arbitrary browser objects do not become the payload merely because they are reachable in memory.
 
-The implementation separates the larger structured evidence set from the smaller narrative selection, with string and item-count limits. This permits a concise narrative without silently redefining the complete underlying finding set. [Tests](../src/lib/narration/__tests__/structured-findings-contract.test.ts) cover 821 synthetic findings, provider-native identifiers, rejected raw-state serialization, the free Welcome projection, and bounded narrative selection.
+The implementation separates the larger structured evidence set from the smaller narrative selection, with string and item-count limits. This permits a concise narrative without silently redefining the complete underlying finding set. [Tests](../src/lib/narration/__tests__/structured-findings-contract.test.ts) cover 821 example findings, provider-native identifiers, rejected raw-state serialization, the free Welcome projection, and bounded narrative selection.
 
 ## 3. Resolve evidence before asking a model to explain it
 
@@ -63,6 +63,6 @@ These supporting implementations are present for source inspection and type comp
 - **Explicit contracts over unrestricted object transfer:** more deliberate field mapping, with a smaller and inspectable data boundary.
 - **Deterministic evidence selection before generation:** clear ownership and identity decisions before model-dependent explanation.
 - **Bounded search and context:** predictable work and context size, with explicit ambiguity and incomplete-evidence states.
-- **Synthetic, service-independent regression tests:** reproducible inspection of difficult cases without customer data or paid model access.
+- **Service-independent regression tests using example inputs:** reproducible inspection of difficult cases without customer data or paid model access.
 
 The wider application continues to be developed and refined. This snapshot exposes these concrete mechanisms without presenting an isolated component test as acceptance of every product workflow.

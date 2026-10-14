@@ -1,5 +1,5 @@
 # 23andMe
-# Synthetic 23andMe-format parser fixture; deliberately truncated
+# Example 23andMe-format parser fixture; deliberately truncated
 # rsid	chromosome	position	genotype
 rs3094315	1	752566	AA
 rs12562034	1	768448	AG
